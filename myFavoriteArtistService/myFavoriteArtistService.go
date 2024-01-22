@@ -11,6 +11,7 @@ import (
 
 const artistInfo = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Cher&api_key=2323785c019f7c0509019a8723c35be2&format=json"
 
+// mockery --dir=myFavoriteArtistService --name=MyFavoriteArtistService --output=MyFavoriteArtistService_test/mocks --outpkg=MockMyFavoriteArtistService
 type MyFavoriteArtistService interface {
 	TopTracks(c *gin.Context, lastFMAPIURL string) (*models.TopTracks, error)
 	ArtistInfo(c *gin.Context, lastFMAPIURL string) (*models.ArtistInfo, error)
@@ -30,18 +31,21 @@ func (getMyFavoriteArtistService getMyFavoriteArtistService) TopTracks(c *gin.Co
 	lastFMAPIURL string) (*models.TopTracks, error) {
 	response, err := http.Get(lastFMAPIURL)
 	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to fetch data"})
 		return nil, err
 	}
 	defer response.Body.Close()
 
 	body, err := io.ReadAll(response.Body)
 	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to read response"})
 		return &models.TopTracks{}, err
 	}
 
 	var topTracks models.TopTracks
 	err = json.Unmarshal(body, &topTracks)
 	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to parse response"})
 		return &models.TopTracks{}, err
 	}
 

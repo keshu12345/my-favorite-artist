@@ -1,9 +1,9 @@
 version: '3.7'
 services:
 
-  maching-prefixes:
+  my-favorite-artist:
     image: my-favorite-artist
-    container_name: my-favorite-artist-container
+    container_name: my-favorite-artist-altrimetrix
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,7 +11,7 @@ services:
       - CONFIG_PATH=config/local
     ports:
 #       REST server
-      - "8080:8080"
+      - "8090:8080"
     networks:
       - mp
 networks:

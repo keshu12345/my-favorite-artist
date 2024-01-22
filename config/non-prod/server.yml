@@ -5,13 +5,6 @@ server:
   ReadTimeout: 5
   WriteTimeout: 15
   IdleTimeout: 20
-
-db:
-  host: localhost
-  port: 5432
-  userName: keshav
-  password: keshav
-  databaseName: speer
-  
+ 
 swagger:
   host: localhost:8080

@@ -35,7 +35,6 @@ type Configuration struct {
 	Server          Server  `mapstructure:"server"`
 	Swagger         Swagger `mapstructure:"swagger"`
 	FM              FM      `mapstructure:"fm"`
-	Postgres        DB      `mapstructure:"db"`
 }
 type Swagger struct {
 	Host string
@@ -52,10 +51,3 @@ type FM struct {
 	FmBaseUrl string
 }
 
-type DB struct {
-	Host         string
-	Port         int
-	DatabaseName string
-	UserName     string
-	Password     string
-}
