@@ -1,0 +1,130 @@
+info:
+  contact: {}
+paths:
+  /artist-info:
+    get:
+      consumes:
+      - application/json
+      description: Get top tracks based on specified parameters
+      parameters:
+      - description: The method parameter
+        in: query
+        name: method
+        required: true
+        type: string
+      - description: The country parameter
+        in: query
+        name: artist
+        required: true
+        type: string
+      - description: The API key parameter
+        in: query
+        name: api_key
+        required: true
+        type: string
+      - description: The format parameter
+        in: query
+        name: format
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: Return
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+      summary: Show Artist info
+      tags:
+      - GetArtistInfo
+  /image-info:
+    get:
+      consumes:
+      - application/json
+      description: Get top tracks based on specified parameters
+      parameters:
+      - description: The method parameter
+        in: query
+        name: method
+        required: true
+        type: string
+      - description: The country parameter
+        in: query
+        name: artist
+        required: true
+        type: string
+      - description: The API key parameter
+        in: query
+        name: api_key
+        required: true
+        type: string
+      - description: The format parameter
+        in: query
+        name: format
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: Return
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+      summary: Show image info
+      tags:
+      - GetImageInfo
+  /top-tracks:
+    get:
+      consumes:
+      - application/json
+      description: Get top tracks based on specified parameters
+      parameters:
+      - description: The method parameter
+        in: query
+        name: method
+        required: true
+        type: string
+      - description: The country parameter
+        in: query
+        name: country
+        required: true
+        type: string
+      - description: The API key parameter
+        in: query
+        name: api_key
+        required: true
+        type: string
+      - description: The format parameter
+        in: query
+        name: format
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: Return
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+      summary: Show top tracks
+      tags:
+      - GetTopTracks
+swagger: "2.0"
