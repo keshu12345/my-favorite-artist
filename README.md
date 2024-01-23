@@ -27,7 +27,7 @@
 
 ### Built With
 
-These framework/Libraries and tools are require to build Matching-Prefix Service
+These framework/Libraries and tools are require to build My-Favorite-Artist Service
 
 * ![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
 * ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
